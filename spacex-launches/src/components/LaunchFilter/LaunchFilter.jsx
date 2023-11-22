@@ -9,11 +9,11 @@ const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
     const [activeButton, setActiveButton] = useState(null);
 
     const handleLaunchSuccessChange = (event) => {
-        setLaunchSuccess(event.target.value);
+        setLaunchSuccess(event);
     };
 
     const handleLandSuccessChange = (event) => {
-        setLandSuccess(event.target.value);
+        setLandSuccess(event);
     };
 
     const handleLaunchYearChange = (label) => {
@@ -42,16 +42,18 @@ const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
                 </div>
                 <div className="LaunchFilters">
                     <p>Launch Success</p>
+                    <hr />
                     <div className="buttons">
-                        <FilterButton onClick={() => handleLaunchSuccessChange(true)} label="True" />
-                        <FilterButton onClick={() => handleLaunchSuccessChange(false)} label="False" />
+                        <button onClick={() => handleLaunchSuccessChange(true)} >True</button>
+                        <button onClick={() => handleLaunchSuccessChange(false)} >False</button>
                     </div>
                 </div>
                 <div className="LandingFilters">
                     <p>Landing Success</p>
+                    <hr />
                     <div className="buttons">
-                        <FilterButton onClick={() => handleLandSuccessChange(true)} label="True" />
-                        <FilterButton onClick={() => handleLandSuccessChange(false)} label="False" />
+                        <button onClick={() => handleLandSuccessChange(true)} label="True" >True</button>
+                        <button onClick={() => handleLandSuccessChange(false)} label="False" >False</button>
                     </div>
                 </div>
             </div>

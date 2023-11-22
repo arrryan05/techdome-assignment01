@@ -14,6 +14,7 @@ const FilterButton = ({ label, onClick ,isActive}) => {
     const launch_success = searchParams.get("launch_success");
     const land_success = searchParams.get("land_success");
 
+      
     if (launch_success) {
       URL += `&&launch_success=`
     }
@@ -32,7 +33,7 @@ const FilterButton = ({ label, onClick ,isActive}) => {
         textDecoration: 'none',
         display: 'inline-block',
         fontSize: 'normal',
-        margin: '4px 2px',
+        margin: '4px 20px',
         cursor: 'pointer',
         borderRadius: '4px'
       }}

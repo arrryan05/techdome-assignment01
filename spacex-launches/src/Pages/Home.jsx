@@ -7,9 +7,12 @@ import './Home.scss'
 
 const Home = () => {
   const [launches, setLaunches] = useState([]);
-  const [launchSuccess, setLaunchSuccess] = useState(null);
-  const [landSuccess, setLandSuccess] = useState(null);
-  const [launchYear, setLaunchYear] = useState(null);
+  const [launchSuccess, setLaunchSuccess] = useState('');
+  const [landSuccess, setLandSuccess] = useState('');
+  const [launchYear, setLaunchYear] = useState('');
+
+  const [url,setUrl] = useState('')
+
 
   const location = useLocation();
   const getData = async () => {
@@ -19,7 +22,10 @@ const Home = () => {
     const land_success = baseURL[2]?.split('=')[1] ?? "";
 
     try {
-      const {data} = await axios.get(`https://api.spaceXdata.com/v3/launches?limit=100&&launch_year=${launch_year}&&launch_success=${launch_success}&&land_success=${land_success}`)
+      const uri = `https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${launch_year}&launch_success=${launchSuccess}&land_success=${landSuccess}`;
+      console.log(uri)
+      setUrl(uri)
+      const {data} = await axios.get(uri)
       setLaunches(data)
       console.log(data);
     } catch (error) {
@@ -29,7 +35,7 @@ const Home = () => {
 
   useEffect(() => {
     getData()
-  }, [location]);
+  }, [location,launchSuccess,landSuccess]);
 
   return (
     <div className='main'>

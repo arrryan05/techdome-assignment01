@@ -3,8 +3,6 @@ import './LaunchItem.scss';
 import logo from '../../assets/logo.svg';
 
 
-
-
 const LaunchItem = ({ launch }) => {
     return (
         <div className='itemCard'>
