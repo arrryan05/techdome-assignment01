@@ -6,6 +6,7 @@ import './LaunchFilter.scss';
 
 const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
 
+    const [activeButton, setActiveButton] = useState(null);
 
     const handleLaunchSuccessChange = (event) => {
         setLaunchSuccess(event.target.value);
@@ -15,9 +16,13 @@ const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
         setLandSuccess(event.target.value);
     };
 
-    const handleLaunchYearChange = (event) => {
-        setLaunchYear(event.target.value);
+    const handleLaunchYearChange = (label) => {
+        setActiveButton(label);
+        setLaunchYear(label);
+        console.log(activeButton);
     };
+
+    
 
     const years = [];
     for (let year = 2006; year <= 2020; year++) {
@@ -32,7 +37,7 @@ const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
                     <p>Launch year</p>
                     <hr />
                     {years.map((item, index) => (
-                        <FilterButton key={index} onClick={() => handleLaunchYearChange(item)} label={item} />
+                        <FilterButton key={index} onClick={()=>handleLaunchYearChange} label={item} isActive={activeButton === item} />
                     ))}
                 </div>
                 <div className="LaunchFilters">

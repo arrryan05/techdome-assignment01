@@ -9,6 +9,7 @@
         align-items: center;
         font-size: x-large;
         font-weight: 700;
+        padding: 10px;
     }
 
     .content {
@@ -44,21 +45,17 @@
             display: grid;
             grid-gap: 20px;
 
-            // Mobile View: Page should have only one Column until 700 px.
             grid-template-columns: repeat(1, 1fr);
 
-            // Tablet View: Page should have 2 columns between 700 and 1024 px.
             @media (min-width: 700px) {
                 
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            // Desktop View: Page should have 4 columns between 1024 and 1440 px.
             @media (min-width: 1024px) {
                 grid-template-columns: repeat(4, 1fr);
             }
 
-            // Beyond 1440px viewport, the content will be centered align with a max width of 1440.
             @media (min-width: 1440px) {
                 grid-template-columns: repeat(4, 1fr);
                 max-width: 1440px;
