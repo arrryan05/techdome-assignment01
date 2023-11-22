@@ -8,7 +8,10 @@ This project is a modern, functional React application that utilizes a component
 - JavaScript
 - Sass
 
-##Live Deployment
+## Live Deployment
+
+
+## LightHouse Score
 ![Alt text](./image.png)
 
 
