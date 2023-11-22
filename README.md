@@ -9,6 +9,7 @@ This project is a modern, functional React application that utilizes a component
 - Sass
 
 ## Live Deployment
+https://spacex-launches05.netlify.app/
 
 
 ## LightHouse Score
