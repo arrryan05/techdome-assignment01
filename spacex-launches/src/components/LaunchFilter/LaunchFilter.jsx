@@ -44,16 +44,16 @@ const LaunchFilter = ({ setLaunchSuccess, setLandSuccess, setLaunchYear }) => {
                     <p>Launch Success</p>
                     <hr />
                     <div className="buttons">
-                        <button onClick={() => handleLaunchSuccessChange(true)} >True</button>
-                        <button onClick={() => handleLaunchSuccessChange(false)} >False</button>
+                        <button className="btn" onClick={() => handleLaunchSuccessChange(true)} >True</button>
+                        <button className="btn" onClick={() => handleLaunchSuccessChange(false)} >False</button>
                     </div>
                 </div>
                 <div className="LandingFilters">
                     <p>Landing Success</p>
                     <hr />
                     <div className="buttons">
-                        <button onClick={() => handleLandSuccessChange(true)} label="True" >True</button>
-                        <button onClick={() => handleLandSuccessChange(false)} label="False" >False</button>
+                        <button className="btn" onClick={() => handleLandSuccessChange(true)} label="True" >True</button>
+                        <button className="btn" onClick={() => handleLandSuccessChange(false)} label="False" >False</button>
                     </div>
                 </div>
             </div>
