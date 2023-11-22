@@ -7,25 +7,21 @@ import './Home.scss'
 
 const Home = () => {
   const [launches, setLaunches] = useState([]);
-  const [launchSuccess, setLaunchSuccess] = useState('');
-  const [landSuccess, setLandSuccess] = useState('');
-  const [launchYear, setLaunchYear] = useState('');
-
-  const [url,setUrl] = useState('')
+  const [url, setUrl] = useState('')
 
 
   const location = useLocation();
   const getData = async () => {
-    const baseURL = location.search.substring(1).split('&&');
-    const launch_year = baseURL[0]?.split('=')[1] ?? "";
-    const launch_success = baseURL[1]?.split('=')[1] ?? "";
-    const land_success = baseURL[2]?.split('=')[1] ?? "";
-
+    const searchParams = new URLSearchParams(location.search);
+    const launch_year = searchParams.get("launch_year")?? "";
+    console.log(launch_year);
+    const launch_success = searchParams.get("launch_success")??"";
+    const land_success = searchParams.get("land_success")??"";
     try {
-      const uri = `https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${launch_year}&launch_success=${launchSuccess}&land_success=${landSuccess}`;
+      const uri = `https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${launch_year}&launch_success=${launch_success}&land_success=${land_success}`;
       console.log(uri)
       setUrl(uri)
-      const {data} = await axios.get(uri)
+      const { data } = await axios.get(uri)
       setLaunches(data)
       console.log(data);
     } catch (error) {
@@ -35,7 +31,7 @@ const Home = () => {
 
   useEffect(() => {
     getData()
-  }, [location,launchSuccess,landSuccess]);
+  }, [location]);
 
   return (
     <div className='main'>
@@ -44,11 +40,7 @@ const Home = () => {
       </div>
       <div className='content'>
         <div className='filterMenu'>
-          <LaunchFilter
-            setLaunchSuccess={setLaunchSuccess}
-            setLandSuccess={setLandSuccess}
-            setLaunchYear={setLaunchYear}
-          />
+          <LaunchFilter />
         </div>
         <div className='displayCard launch-grid'>
           {launches.map(launch => <LaunchItem key={launch.flight_number} launch={launch} />)}

@@ -1,31 +1,14 @@
 // FilterButton.jsx
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 
-const FilterButton = ({ label, onClick ,isActive}) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+const FilterButton = ({ label, setLaunchYear, isActive }) => {
 
-  const applyYearfilter = () => {
-    onClick(label);
-    var URL = location.pathname;
-    const searchParams = new URLSearchParams(location.search);
-    const launch_success = searchParams.get("launch_success");
-    const land_success = searchParams.get("land_success");
-
-      
-    if (launch_success) {
-      URL += `&&launch_success=`
-    }
-    navigate(URL + `?year=${label}`)
-
-  }
   return (
     <button
-      onClick={applyYearfilter}
+      onClick={() => setLaunchYear(label)}
       style={{
-        backgroundColor: isActive ? 'darkgreen' : 'lightgreen',
+        backgroundColor: isActive ? 'darkgreen' : 'rgb(89, 201, 89)',
         color: 'white',
         border: 'none',
         padding: '2px 9px',

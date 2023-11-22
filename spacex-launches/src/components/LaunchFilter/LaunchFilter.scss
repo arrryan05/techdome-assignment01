@@ -1,4 +1,7 @@
 .filterComponent{
+    .heading{
+        display: flex;
+    }
     height: 100%;
     width: 100%;
     padding: 2%;
@@ -21,7 +24,7 @@
         
     }
     .btn {
-        background-color: lightgreen;
+        background-color: rgb(89, 201, 89);
         color: white;
         border: none;
         padding: 2px 9px;

@@ -18,6 +18,8 @@
         display: flex;
         @media (max-width: 700px) {
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
 
@@ -26,11 +28,10 @@
             height: 85%;
             width: 15%;
             border-radius: 5px;
-            margin-left: 1%;
+            margin-left: 4%;
             @media (max-width: 700px) {
-                width: 100%;
-                height: auto;
-                overflow: auto;
+                width: 210px;
+                height: 700px;
             }
         }
 
@@ -39,16 +40,19 @@
             width: 80%;
             overflow-y: auto;
             padding-left: 25px;
+
+            @media (max-width: 700px) {
+                margin-top: 2%;
+            }
+
         }
 
         .launch-grid {
             display: grid;
             grid-gap: 20px;
-
             grid-template-columns: repeat(1, 1fr);
 
-            @media (min-width: 700px) {
-                
+            @media (min-width: 700px) {   
                 grid-template-columns: repeat(2, 1fr);
             }
 
