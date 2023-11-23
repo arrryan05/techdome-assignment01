@@ -1,50 +1,52 @@
-.filterComponent{
-    .heading{
+.filterComponent {
+    .heading {
         display: flex;
     }
+
     height: 100%;
     width: 100%;
     padding: 2%;
 
-    p{
+    p {
         margin: 5px;
     }
+
     hr {
         border: none;
         width: 80%;
         border-top: 1px solid #ccc;
         margin: 10px 0;
     }
-    .yearFilters{
 
-    }
-    .LaunchFilters{
-        .buttons{
+    .yearFilters {}
+
+    .LaunchFilters {
+        .buttons {
             @media screen and (min-width: 700px) and (max-width: 1024px) {
                 display: flex;
                 justify-content: space-around;
-                .btn{
-                    padding: 2px,5px;
+
+                .btn {
+                    padding: 2px, 5px;
                 }
 
-            }        
+            }
         }
-
-
     }
-    .LandingFilters{
-        .buttons{
+
+    .LandingFilters {
+        .buttons {
             @media screen and (min-width: 700px) and (max-width: 1024px) {
                 display: flex;
                 justify-content: space-around;
-                .btn{
-                    padding: 2px,5px;
-                }
 
-            }        
+                .btn {
+                    padding: 2px, 5px;
+                }
+            }
         }
-        
     }
+
     .btn {
         background-color: rgb(89, 201, 89);
         color: white;
@@ -57,7 +59,7 @@
         margin: 4px 20px;
         cursor: pointer;
         border-radius: 4px;
-    
+
         &.active {
             background-color: darkgreen;
         }
@@ -66,5 +68,5 @@
     @media (max-width: 700px) {
         padding-left: 5%;
     }
-   
+
 }
