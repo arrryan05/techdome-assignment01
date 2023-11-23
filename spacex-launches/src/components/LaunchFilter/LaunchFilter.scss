@@ -5,6 +5,7 @@
     height: 100%;
     width: 100%;
     padding: 2%;
+
     p{
         margin: 5px;
     }
@@ -18,9 +19,30 @@
 
     }
     .LaunchFilters{
+        .buttons{
+            @media screen and (min-width: 700px) and (max-width: 1024px) {
+                display: flex;
+                justify-content: space-around;
+                .btn{
+                    padding: 2px,5px;
+                }
+
+            }        
+        }
+
 
     }
     .LandingFilters{
+        .buttons{
+            @media screen and (min-width: 700px) and (max-width: 1024px) {
+                display: flex;
+                justify-content: space-around;
+                .btn{
+                    padding: 2px,5px;
+                }
+
+            }        
+        }
         
     }
     .btn {
@@ -39,6 +61,10 @@
         &.active {
             background-color: darkgreen;
         }
+    }
+
+    @media (max-width: 700px) {
+        padding-left: 5%;
     }
    
 }
